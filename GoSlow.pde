@@ -7,8 +7,8 @@ void setup() {
   // Your high-level code goes here
   t = new Turtle(this);
 
-
-  drawmyname();
+  // Change the size HERE!!
+  drawmyname(50);
 
   // End your high-level code here
 
@@ -17,68 +17,67 @@ void setup() {
 }
 
 // Your methods can be defined down here
-public void drawmyname() {
+public void drawmyname(int size) {
 
   t.setColor(100, 150, 175);
   t.setStrokeWeight(4.6);
   
   //letter S
-  t.right(180);
-  t.forward(27);
-  t.left(90);
-  t.forward(15);
-  t.left(90);
-  t.forward(27);
-  t.right(90);
-  t.forward(27);
-  t.right(90);
-  t.forward(27);
-  
-  //letter u
-  t.penUp();
-  t.left(180);
-  t.forward(40);
-  t.penDown();
-  t.left(90);
-  t.forward(27);
-  t.penUp();
-  t.right(90);
-  t.forward(20);
-  t.penDown();
-  t.right(90);
-  t.forward(27);
-  t.right(90);
-  t.forward(20);
-  t.penUp();
-  t.right(180);
-  t.forward(35);
-  t.left(90);
-  t.penDown();
-  
-  //Letter k
-  t.forward(45);
-  t.right(180);
-  t.forward(28);
-  t.left(40);
-  t.forward(22);
-  t.right(180);
-  t.forward(22);
-  t.right(90);
-  t.forward(15);
-  t.right(40);
-  t.penUp();
-  t.forward(15);
-  
-  //letter i
-  t.penDown();
-  t.right(90);
-  t.forward(1);
-  t.penUp();
-  t.forward(10);
-  t.penDown();
-  t.forward(15);
-  
+  t.jump(-225,-175);
+  letterS(size);
+  letteru(size);
+  letterk(size);
+  letteri(size);
   t.hide();
+}
+    
   
-  
+public void letterS(int size) {
+  t.jump(size,0);
+  t.right(180);
+  t.forward(size);
+  t.left(90);
+  t.forward(size*0.6);
+  t.left(90);
+  t.forward(size);
+  t.right(90);
+  t.forward(size*0.7);
+  t.right(90);
+  t.forward(size);
+}
+
+public void letteru(int size) {
+  t.jump(size*1.3,-(size*0.7));
+  t.left(90);
+  t.forward(size*0.7);
+  t.left(90);
+  t.forward(size*0.6);
+  t.left(90);
+  t.forward(size*0.7);
+}
+
+public void letterk(int size) {
+  t.jump(size*0.4,-(size*0.6));
+  t.right(180);
+  t.forward(size*1.3);
+  t.right(180);
+  t.jump(0,-(size*0.4));
+  t.right(50);
+  t.forward(size*0.4);
+  t.penUp();
+  t.right(180);
+  t.forward(size*0.4);
+  t.left(40);
+  t.penDown();
+  t.left(45);
+  t.forward(size*0.5);
+  t.left(55);
+}
+
+public void letteri(int size){
+  t.jump(size*0.4,0);
+  t.left(90);
+  t.forward(size*0.5);
+  t.jump(0,-size*0.2);
+  t.forward(size*0.04);
 }
